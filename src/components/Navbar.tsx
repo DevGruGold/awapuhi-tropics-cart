@@ -30,24 +30,34 @@ const Navbar = () => {
         }`}
       >
         <div className="container mx-auto flex justify-between items-center px-4">
-          <Link to="/" className="text-2xl font-serif font-bold text-awapuhi-700">
+          <Link to="/" className={`text-2xl font-serif font-bold ${
+            isScrolled ? "text-awapuhi-700" : "text-white text-shadow"
+          }`}>
             Awapuhi
           </Link>
           
           <div className="hidden md:flex space-x-6 text-sm">
-            <a href="#product" className="hover:text-awapuhi-700 transition-colors">
+            <a href="#product" className={`transition-colors ${
+              isScrolled ? "text-gray-700 hover:text-awapuhi-700" : "text-white text-shadow-sm hover:text-awapuhi-200"
+            }`}>
               Product
             </a>
-            <a href="#about" className="hover:text-awapuhi-700 transition-colors">
+            <a href="#about" className={`transition-colors ${
+              isScrolled ? "text-gray-700 hover:text-awapuhi-700" : "text-white text-shadow-sm hover:text-awapuhi-200"
+            }`}>
               About
             </a>
-            <a href="#benefits" className="hover:text-awapuhi-700 transition-colors">
+            <a href="#benefits" className={`transition-colors ${
+              isScrolled ? "text-gray-700 hover:text-awapuhi-700" : "text-white text-shadow-sm hover:text-awapuhi-200"
+            }`}>
               Benefits
             </a>
           </div>
           
           <button 
-            className="relative flex items-center" 
+            className={`relative flex items-center ${
+              isScrolled ? "text-gray-800" : "text-white text-shadow-sm"
+            }`}
             onClick={toggleCart}
             aria-label="Open cart"
           >

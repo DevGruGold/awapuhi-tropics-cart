@@ -11,28 +11,32 @@ const Hero = () => {
 
   return (
     <div className="relative min-h-[100vh] flex items-center justify-center overflow-hidden">
+      {/* Background image with fallback color */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
-        style={{ 
-          backgroundImage: "url('/images/hero.jpg')", 
-          filter: "brightness(0.7)"
-        }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 bg-earth-100"
+        style={{ backgroundImage: "url('/images/hero.jpg')" }}
       />
       
+      {/* Dark overlay for better text contrast */}
+      <div className="absolute inset-0 bg-black/40 z-0"></div>
+      
+      {/* Top gradient overlay for navbar */}
+      <div className="absolute top-0 left-0 right-0 h-32 nav-gradient-overlay z-0"></div>
+      
       <div className="container mx-auto px-4 z-10 text-center relative">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 drop-shadow-lg">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 text-shadow-lg">
           Hawaiian Shampoo
         </h1>
-        <h2 className="text-2xl md:text-3xl font-serif text-white mb-8 max-w-3xl mx-auto drop-shadow-lg tracking-wide">
+        <h2 className="text-2xl md:text-3xl font-serif text-white mb-8 max-w-3xl mx-auto text-shadow tracking-wide">
           <span className="italic">Awapuhi</span> – Fresh from the Tropics to Your Hair & Skin
         </h2>
-        <p className="text-white text-lg max-w-2xl mx-auto mb-10 drop-shadow">
+        <p className="text-white text-lg max-w-2xl mx-auto mb-10 text-shadow-sm">
           Sourced from Costa Rica's rainforests, our luxurious blend of wild Awapuhi and aloe vera
           hydrates, nourishes, and revitalizes.
         </p>
         <Button 
           onClick={scrollToProduct} 
-          className="bg-awapuhi-600 hover:bg-awapuhi-700 text-white px-8 py-6 rounded-full text-lg"
+          className="bg-awapuhi-600 hover:bg-awapuhi-700 text-white px-8 py-6 rounded-full text-lg font-medium shadow-lg"
         >
           Shop Now
         </Button>
@@ -42,7 +46,7 @@ const Hero = () => {
         <div className="animate-bounce">
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
-            className="h-10 w-10 text-white opacity-70"
+            className="h-10 w-10 text-white opacity-80 drop-shadow-lg"
             fill="none" 
             viewBox="0 0 24 24" 
             stroke="currentColor"
