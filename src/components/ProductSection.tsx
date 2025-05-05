@@ -144,6 +144,38 @@ const ProductSection = () => {
             </div>
           </div>
         </div>
+
+        {/* Awapuhi Plant Information Section */}
+        <div className="mt-20 bg-earth-50 rounded-2xl p-8">
+          <h3 className="text-3xl font-serif text-center mb-10">The Awapuhi Plant</h3>
+          
+          <div className="grid md:grid-cols-2 gap-10">
+            <div className="flex flex-col justify-center">
+              <p className="text-gray-700 mb-4">
+                The Awapuhi plant (Zingiber zerumbet), commonly known as shampoo ginger, is a tropical flowering plant native to Southeast Asia but now cultivated throughout tropical regions including Hawaii and Costa Rica.
+              </p>
+              <p className="text-gray-700 mb-4">
+                Its striking red pinecone-shaped flower heads contain a clear, slippery liquid that indigenous peoples have used for centuries as a natural hair and body cleanser, giving it the name "shampoo ginger."
+              </p>
+              <p className="text-gray-700">
+                The liquid is rich in saponins that create a natural lather, along with anti-inflammatory and moisturizing compounds that nourish both hair and skin, making it a perfect natural beauty ingredient.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-2 gap-4">
+              <img 
+                src="/lovable-uploads/afdb7664-1486-461b-bb4e-aa1ac8a8a566.png" 
+                alt="Awapuhi plants growing in natural habitat" 
+                className="rounded-xl object-cover w-full h-full"
+              />
+              <img 
+                src="/lovable-uploads/01c9fbe8-8165-4f1c-910e-3b79bd1006cf.png" 
+                alt="Awapuhi plant held in hand" 
+                className="rounded-xl object-cover w-full h-full"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

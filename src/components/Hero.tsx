@@ -24,22 +24,31 @@ const Hero = () => {
       <div className="absolute top-0 left-0 right-0 h-32 nav-gradient-overlay z-0"></div>
       
       <div className="container mx-auto px-4 z-10 text-center relative">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 text-shadow-lg">
-          Hawaiian Shampoo
-        </h1>
-        <h2 className="text-2xl md:text-3xl font-serif text-white mb-8 max-w-3xl mx-auto text-shadow tracking-wide">
-          <span className="italic">Awapuhi</span> – Fresh from the Tropics to Your Hair & Skin
-        </h2>
-        <p className="text-white text-lg max-w-2xl mx-auto mb-10 text-shadow-sm">
-          Sourced from Costa Rica's rainforests, our luxurious blend of wild Awapuhi and aloe vera
-          hydrates, nourishes, and revitalizes.
-        </p>
-        <Button 
-          onClick={scrollToProduct} 
-          className="bg-awapuhi-600 hover:bg-awapuhi-700 text-white px-8 py-6 rounded-full text-lg font-medium shadow-lg"
-        >
-          Shop Now
-        </Button>
+        <div className="flex flex-col items-center">
+          <div className="w-24 h-24 md:w-32 md:h-32 mb-6 relative">
+            <img 
+              src="/lovable-uploads/afdb7664-1486-461b-bb4e-aa1ac8a8a566.png" 
+              alt="Awapuhi Ginger Plant" 
+              className="w-full h-full object-contain drop-shadow-lg"
+            />
+          </div>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 text-shadow-lg">
+            Hawaiian Shampoo
+          </h1>
+          <h2 className="text-2xl md:text-3xl font-serif text-white mb-8 max-w-3xl mx-auto text-shadow tracking-wide">
+            <span className="italic">Awapuhi</span> – Fresh from the Tropics to Your Hair & Skin
+          </h2>
+          <p className="text-white text-lg max-w-2xl mx-auto mb-10 text-shadow-sm">
+            Sourced from Costa Rica's rainforests, our luxurious blend of wild Awapuhi and aloe vera
+            hydrates, nourishes, and revitalizes.
+          </p>
+          <Button 
+            onClick={scrollToProduct} 
+            className="bg-awapuhi-600 hover:bg-awapuhi-700 text-white px-8 py-6 rounded-full text-lg font-medium shadow-lg"
+          >
+            Shop Now
+          </Button>
+        </div>
       </div>
       
       <div className="absolute bottom-10 left-0 right-0 flex justify-center">
