@@ -169,11 +169,12 @@ const ProductSection = () => {
                 moisturizing compounds, it's nature's perfect beauty ingredient.
               </p>
             </div>
-            <div className="h-80 md:h-auto relative overflow-hidden">
+            <div className="relative">
               <img 
                 src="/lovable-uploads/afdb7664-1486-461b-bb4e-aa1ac8a8a566.png" 
                 alt="Awapuhi plants" 
                 className="w-full h-full object-cover"
+                style={{ position: 'relative' }}
               />
             </div>
           </div>
