@@ -61,18 +61,8 @@ const ProductSection = () => {
   return (
     <section id="product" className="py-16 md:py-24 bg-gradient-to-b from-white to-earth-50">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
-          <div className="md:w-1/2 sticky top-24">
-            <div className="bg-earth-50 p-4 rounded-3xl overflow-hidden shadow-lg">
-              <img 
-                src="/lovable-uploads/afdb7664-1486-461b-bb4e-aa1ac8a8a566.png" 
-                alt="Hawaiian Shampoo Awapuhi" 
-                className="w-full h-auto object-cover rounded-2xl hover:scale-[1.02] transition-transform duration-300"
-              />
-            </div>
-          </div>
-          
-          <div className="md:w-1/2">
+        <div className="flex flex-col items-start">
+          <div className="w-full">
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-2">Hawaiian Shampoo</h2>
             <h3 className="text-xl font-serif italic text-awapuhi-700 mb-6">Awapuhi</h3>
             
@@ -88,7 +78,7 @@ const ProductSection = () => {
               </p>
             </div>
             
-            <Card className="bg-earth-50/50 mb-6 border-earth-100">
+            <Card className="bg-earth-50/50 mb-6 border-earth-100 max-w-md">
               <CardContent className="pt-6">
                 <label className="block text-sm font-medium mb-2">Size</label>
                 <Select
@@ -109,7 +99,7 @@ const ProductSection = () => {
               </CardContent>
             </Card>
             
-            <div className="mb-8">
+            <div className="mb-8 max-w-md">
               <label className="block text-sm font-medium mb-2">Quantity</label>
               <div className="flex items-center">
                 <button
@@ -132,12 +122,12 @@ const ProductSection = () => {
             
             <Button
               onClick={handleAddToCart}
-              className="w-full bg-awapuhi-600 hover:bg-awapuhi-700 text-white py-7 rounded-full text-lg shadow-md hover:shadow-lg transition-all"
+              className="w-full max-w-md bg-awapuhi-600 hover:bg-awapuhi-700 text-white py-7 rounded-full text-lg shadow-md hover:shadow-lg transition-all"
             >
               Add to Cart
             </Button>
             
-            <div className="mt-10">
+            <div className="mt-10 max-w-lg">
               <h4 className="text-xl font-serif mb-4 text-earth-800">Key Benefits</h4>
               <ul className="grid grid-cols-1 gap-3 bg-white/80 p-4 rounded-xl shadow-sm">
                 {benefits.map((benefit, index) => (
