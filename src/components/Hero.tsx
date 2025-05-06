@@ -15,7 +15,7 @@ const Hero = () => {
       {/* Background image with fallback color */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 bg-earth-100"
-        style={{ backgroundImage: "url('/images/hero.jpg')" }}
+        style={{ backgroundImage: "url('/lovable-uploads/afdb7664-1486-461b-bb4e-aa1ac8a8a566.png')" }}
       />
       
       {/* Dark overlay for better text contrast */}

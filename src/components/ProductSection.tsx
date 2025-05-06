@@ -14,11 +14,6 @@ import {
   Card,
   CardContent,
 } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
 
 const ProductSection = () => {
   const { addItem } = useCart();
@@ -32,7 +27,7 @@ const ProductSection = () => {
       price: getPrice(),
       quantity: quantity,
       size: selectedSize,
-      image: "/images/hero.jpg",
+      image: "/lovable-uploads/afdb7664-1486-461b-bb4e-aa1ac8a8a566.png",
     });
   };
 
@@ -70,7 +65,7 @@ const ProductSection = () => {
           <div className="md:w-1/2 sticky top-24">
             <div className="bg-earth-50 p-4 rounded-3xl overflow-hidden shadow-lg">
               <img 
-                src="/images/hero.jpg" 
+                src="/lovable-uploads/afdb7664-1486-461b-bb4e-aa1ac8a8a566.png" 
                 alt="Hawaiian Shampoo Awapuhi" 
                 className="w-full h-auto object-cover rounded-2xl hover:scale-[1.02] transition-transform duration-300"
               />
@@ -156,37 +151,30 @@ const ProductSection = () => {
           </div>
         </div>
 
-        {/* Awapuhi Plant Feature Section */}
-        <div className="mt-24 rounded-3xl overflow-hidden shadow-xl">
-          <div className="grid md:grid-cols-2 gap-0">
-            <div className="relative h-full">
+        {/* Featured Section with Awapuhi Plant Info */}
+        <div className="mt-24 bg-earth-50 rounded-3xl shadow-xl overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            <div className="p-8 md:p-12">
+              <h3 className="text-3xl font-serif text-earth-800 mb-6">The Awapuhi Plant</h3>
+              <p className="text-gray-700 mb-4">
+                The Awapuhi plant (Zingiber zerumbet), commonly known as shampoo ginger, is a tropical 
+                flowering plant native to Southeast Asia but now cultivated throughout tropical regions.
+              </p>
+              <p className="text-gray-700 mb-4">
+                Its striking red pinecone-shaped flower heads contain a clear, slippery liquid that indigenous 
+                peoples have used for centuries as a natural hair and body cleanser.
+              </p>
+              <p className="text-gray-700">
+                Rich in saponins that create a natural lather, along with anti-inflammatory and 
+                moisturizing compounds, it's nature's perfect beauty ingredient.
+              </p>
+            </div>
+            <div className="h-80 md:h-auto relative overflow-hidden">
               <img 
                 src="/lovable-uploads/afdb7664-1486-461b-bb4e-aa1ac8a8a566.png" 
-                alt="Awapuhi plants growing in natural habitat" 
+                alt="Awapuhi plants" 
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent md:bg-gradient-to-r md:from-black/60 md:via-transparent md:to-transparent"></div>
-              <div className="absolute bottom-6 left-6 md:bottom-auto md:left-6 md:top-1/2 md:-translate-y-1/2 max-w-md">
-                <h3 className="text-3xl font-serif text-white mb-3 drop-shadow-lg">The Awapuhi Plant</h3>
-                <p className="text-white/90 hidden md:block text-lg drop-shadow-md">
-                  Known as "shampoo ginger," this tropical treasure is the secret behind our luxurious formula.
-                </p>
-              </div>
-            </div>
-            
-            <div className="bg-earth-50 p-8 md:p-12 flex flex-col justify-center">
-              <div className="max-w-lg">
-                <h3 className="text-3xl font-serif text-earth-800 mb-6 md:hidden">The Awapuhi Plant</h3>
-                <p className="text-gray-700 mb-4 text-lg">
-                  The Awapuhi plant (Zingiber zerumbet), commonly known as shampoo ginger, is a tropical flowering plant native to Southeast Asia but now cultivated throughout tropical regions including Hawaii and Costa Rica.
-                </p>
-                <p className="text-gray-700 mb-4 text-lg">
-                  Its striking red pinecone-shaped flower heads contain a clear, slippery liquid that indigenous peoples have used for centuries as a natural hair and body cleanser, giving it the name "shampoo ginger."
-                </p>
-                <p className="text-gray-700 text-lg">
-                  The liquid is rich in saponins that create a natural lather, along with anti-inflammatory and moisturizing compounds that nourish both hair and skin, making it a perfect natural beauty ingredient.
-                </p>
-              </div>
             </div>
           </div>
         </div>
