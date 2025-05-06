@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
 import { Button } from "@/components/ui/button";
@@ -162,16 +161,11 @@ const ProductSection = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-2 gap-4">
+            <div>
               <img 
                 src="/lovable-uploads/afdb7664-1486-461b-bb4e-aa1ac8a8a566.png" 
                 alt="Awapuhi plants growing in natural habitat" 
-                className="rounded-xl object-cover w-full h-full"
-              />
-              <img 
-                src="/lovable-uploads/01c9fbe8-8165-4f1c-910e-3b79bd1006cf.png" 
-                alt="Awapuhi plant held in hand" 
-                className="rounded-xl object-cover w-full h-full"
+                className="rounded-xl object-cover w-full h-auto max-h-[500px] shadow-lg mx-auto"
               />
             </div>
           </div>
