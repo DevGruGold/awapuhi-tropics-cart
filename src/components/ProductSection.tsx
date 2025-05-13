@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
 import { useLanguage } from "@/context/LanguageContext";
@@ -36,20 +35,20 @@ const ProductSection = () => {
   const getPrice = () => {
     switch (selectedSize) {
       case "100ml":
-        return 12.99;
+        return 38.97; // 12.99 * 3
       case "250ml":
-        return 24.99;
+        return 74.97; // 24.99 * 3
       case "500ml":
-        return 39.99;
+        return 119.97; // 39.99 * 3
       default:
-        return 24.99;
+        return 74.97; // 24.99 * 3
     }
   };
 
   const sizeOptions = [
-    { value: "100ml", label: "100ml - $12.99" },
-    { value: "250ml", label: "250ml - $24.99" },
-    { value: "500ml", label: "500ml - $39.99" },
+    { value: "100ml", label: "100ml - $38.97" },
+    { value: "250ml", label: "250ml - $74.97" },
+    { value: "500ml", label: "500ml - $119.97" },
   ];
 
   const benefits = [
