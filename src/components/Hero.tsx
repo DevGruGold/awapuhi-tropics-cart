@@ -1,8 +1,11 @@
 
 import { Button } from "@/components/ui/button";
-import { Camera } from "lucide-react";
+import { Globe } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Hero = () => {
+  const { t, language, toggleLanguage } = useLanguage();
+  
   const scrollToProduct = () => {
     const productSection = document.getElementById('product');
     if (productSection) {
@@ -24,27 +27,31 @@ const Hero = () => {
       {/* Top gradient overlay for navbar */}
       <div className="absolute top-0 left-0 right-0 h-32 nav-gradient-overlay z-0"></div>
       
+      {/* Language toggle button */}
+      <button
+        onClick={toggleLanguage}
+        className="absolute top-8 right-8 z-20 bg-white/10 backdrop-blur-sm hover:bg-white/20 p-2 rounded-full transition-colors"
+        aria-label={language === 'en' ? t('switchToSpanish') : t('switchToEnglish')}
+      >
+        <Globe className="h-6 w-6 text-white" />
+      </button>
+      
       <div className="container mx-auto px-4 z-10 relative">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-          <div className="mb-8 animate-fade-in">
-            <Camera className="h-12 w-12 text-earth-300 mb-4" />
-          </div>
-          
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">          
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-4 md:mb-6 text-shadow-lg">
-            Hawaiian Shampoo
+            {t('heroTitle')}
           </h1>
           <h2 className="text-xl md:text-3xl font-serif text-white mb-6 max-w-3xl mx-auto text-shadow tracking-wide">
-            <span className="italic">Awapuhi</span> – Fresh from the Tropics to Your Hair & Skin
+            <span className="italic">Awapuhi</span> – {t('heroSubtitle')}
           </h2>
           <p className="text-white/90 text-base md:text-lg max-w-2xl mx-auto mb-10 text-shadow-sm">
-            Sourced from Costa Rica's rainforests, our luxurious blend of wild Awapuhi and aloe vera
-            hydrates, nourishes, and revitalizes.
+            {t('heroDescription')}
           </p>
           <Button 
             onClick={scrollToProduct} 
             className="bg-earth-500 hover:bg-earth-600 text-white px-8 py-6 rounded-full text-lg font-medium shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1"
           >
-            Discover Now
+            {t('discoverButton')}
           </Button>
         </div>
       </div>

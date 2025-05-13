@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
+import { useLanguage } from "@/context/LanguageContext";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -9,7 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Check, Minus, Plus, Camera } from "lucide-react";
+import { Check, Minus, Plus } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -17,6 +18,7 @@ import {
 
 const ProductSection = () => {
   const { addItem } = useCart();
+  const { t } = useLanguage();
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState("250ml");
 
@@ -51,11 +53,11 @@ const ProductSection = () => {
   ];
 
   const benefits = [
-    "Cold-pressed for maximum purity",
-    "Free from synthetics and silicones",
-    "Natural plant-based preservatives",
-    "Works as leave-in conditioner, scalp treatment & skin tonic",
-    "Refrigerated for peak freshness",
+    t('benefit1'),
+    t('benefit2'),
+    t('benefit3'),
+    t('benefit4'),
+    t('benefit5'),
   ];
 
   return (
@@ -63,24 +65,23 @@ const ProductSection = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-start">
           <div className="w-full">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-2">Hawaiian Shampoo</h2>
-            <h3 className="text-xl font-serif italic text-awapuhi-700 mb-6">Awapuhi</h3>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-2">{t('productTitle')}</h2>
+            <h3 className="text-xl font-serif italic text-awapuhi-700 mb-6">{t('productSubtitle')}</h3>
             
             <div className="text-2xl md:text-3xl font-medium mb-6 text-earth-600">${getPrice()}</div>
             
             <div className="mb-6">
               <p className="text-gray-700 mb-4 text-lg">
-                Sourced from the heart of Costa Rica's rainforests, our Hawaiian Shampoo is a luxurious blend of 
-                wild Awapuhi (shampoo ginger) and soothing aloe vera.
+                {t('productDescription1')}
               </p>
               <p className="text-gray-700 text-lg">
-                Cold-pressed for purity, this natural conditioner hydrates, nourishes, and revitalizes both scalp and skin.
+                {t('productDescription2')}
               </p>
             </div>
             
             <Card className="bg-earth-50/50 mb-6 border-earth-100 max-w-md">
               <CardContent className="pt-6">
-                <label className="block text-sm font-medium mb-2">Size</label>
+                <label className="block text-sm font-medium mb-2">{t('size')}</label>
                 <Select
                   value={selectedSize}
                   onValueChange={setSelectedSize}
@@ -100,7 +101,7 @@ const ProductSection = () => {
             </Card>
             
             <div className="mb-8 max-w-md">
-              <label className="block text-sm font-medium mb-2">Quantity</label>
+              <label className="block text-sm font-medium mb-2">{t('quantity')}</label>
               <div className="flex items-center">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
@@ -124,11 +125,11 @@ const ProductSection = () => {
               onClick={handleAddToCart}
               className="w-full max-w-md bg-awapuhi-600 hover:bg-awapuhi-700 text-white py-7 rounded-full text-lg shadow-md hover:shadow-lg transition-all"
             >
-              Add to Cart
+              {t('addToCart')}
             </Button>
             
             <div className="mt-10 max-w-lg">
-              <h4 className="text-xl font-serif mb-4 text-earth-800">Key Benefits</h4>
+              <h4 className="text-xl font-serif mb-4 text-earth-800">{t('keyBenefits')}</h4>
               <ul className="grid grid-cols-1 gap-3 bg-white/80 p-4 rounded-xl shadow-sm">
                 {benefits.map((benefit, index) => (
                   <li key={index} className="flex items-start">
@@ -145,18 +146,15 @@ const ProductSection = () => {
         <div className="mt-24 bg-earth-50 rounded-3xl shadow-xl overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="p-8 md:p-12">
-              <h3 className="text-3xl font-serif text-earth-800 mb-6">The Awapuhi Plant</h3>
+              <h3 className="text-3xl font-serif text-earth-800 mb-6">{t('awapuhiTitle')}</h3>
               <p className="text-gray-700 mb-4">
-                The Awapuhi plant (Zingiber zerumbet), commonly known as shampoo ginger, is a tropical 
-                flowering plant native to Southeast Asia but now cultivated throughout tropical regions.
+                {t('awapuhiDesc1')}
               </p>
               <p className="text-gray-700 mb-4">
-                Its striking red pinecone-shaped flower heads contain a clear, slippery liquid that indigenous 
-                peoples have used for centuries as a natural hair and body cleanser.
+                {t('awapuhiDesc2')}
               </p>
               <p className="text-gray-700">
-                Rich in saponins that create a natural lather, along with anti-inflammatory and 
-                moisturizing compounds, it's nature's perfect beauty ingredient.
+                {t('awapuhiDesc3')}
               </p>
             </div>
             <div className="relative">
