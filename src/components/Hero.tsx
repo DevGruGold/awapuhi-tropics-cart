@@ -1,6 +1,5 @@
 
 import { Button } from "@/components/ui/button";
-import { Globe } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 const Hero = () => {
@@ -27,14 +26,7 @@ const Hero = () => {
       {/* Top gradient overlay for navbar */}
       <div className="absolute top-0 left-0 right-0 h-32 nav-gradient-overlay z-0"></div>
       
-      {/* Language toggle button */}
-      <button
-        onClick={toggleLanguage}
-        className="absolute top-8 right-8 z-20 bg-white/10 backdrop-blur-sm hover:bg-white/20 p-2 rounded-full transition-colors"
-        aria-label={language === 'en' ? t('switchToSpanish') : t('switchToEnglish')}
-      >
-        <Globe className="h-6 w-6 text-white" />
-      </button>
+      {/* Removed language toggle button from Hero since we now have it in the Navbar */}
       
       <div className="container mx-auto px-4 z-10 relative">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">          
